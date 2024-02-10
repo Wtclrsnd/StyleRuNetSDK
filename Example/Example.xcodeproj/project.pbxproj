@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		2404F2D52B77D44D000F8621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2404F2D42B77D44D000F8621 /* Assets.xcassets */; };
 		2404F2D82B77D44D000F8621 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2404F2D62B77D44D000F8621 /* LaunchScreen.storyboard */; };
 		2404F2E12B77D580000F8621 /* StyleRuNetSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2404F2E02B77D580000F8621 /* StyleRuNetSDK */; };
+		2404F2E42B77DB5C000F8621 /* StyleRuNetSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2404F2E32B77DB5C000F8621 /* StyleRuNetSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2404F2E42B77DB5C000F8621 /* StyleRuNetSDK in Frameworks */,
 				2404F2E12B77D580000F8621 /* StyleRuNetSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +97,7 @@
 			name = Example;
 			packageProductDependencies = (
 				2404F2E02B77D580000F8621 /* StyleRuNetSDK */,
+				2404F2E32B77DB5C000F8621 /* StyleRuNetSDK */,
 			);
 			productName = Example;
 			productReference = 2404F2C82B77D44B000F8621 /* Example.app */;
@@ -124,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 2404F2BF2B77D44B000F8621;
+			packageReferences = (
+				2404F2E22B77DB5C000F8621 /* XCLocalSwiftPackageReference "../StyleRuNetSDK" */,
+			);
 			productRefGroup = 2404F2C92B77D44B000F8621 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -288,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -379,8 +385,19 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		2404F2E22B77DB5C000F8621 /* XCLocalSwiftPackageReference "../StyleRuNetSDK" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../StyleRuNetSDK;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2404F2E02B77D580000F8621 /* StyleRuNetSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = StyleRuNetSDK;
+		};
+		2404F2E32B77DB5C000F8621 /* StyleRuNetSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = StyleRuNetSDK;
 		};
