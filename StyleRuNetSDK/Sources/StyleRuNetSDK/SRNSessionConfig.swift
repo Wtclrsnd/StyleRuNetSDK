@@ -4,21 +4,30 @@ import Foundation
 public enum SRNCachePolicy: String {
     // кэширование
     case useProtocolCachePolicy = "useProtocolCachePolicy"
+
 }
 
-public enum SRNRequestCachePolicy: String {
-    case reloadIgnoringLocalCacheData = "reloadIgnoringLocalCacheData"
+public enum SRNRequestCachePolicy {
+    case useProtocolCachePolicy
+    case reloadIgnoringLocalCacheData
+
+    var urlRequestCachePolicy: URLRequest.CachePolicy {
+        switch self {
+        case .useProtocolCachePolicy:
+            return .useProtocolCachePolicy
+        case .reloadIgnoringLocalCacheData:
+            return .reloadIgnoringLocalCacheData
+        }
+    }
 }
 
-
-public class SRNSessionConfig { // wrap around URLSessionConfiguration
+public class SRNSessionConfig {
     
     var cachePolicy: SRNCachePolicy = .useProtocolCachePolicy
     var requestCachePolicy: SRNRequestCachePolicy = .reloadIgnoringLocalCacheData
     
     public init() {}
     
-    // default configuration
     public static func defaultConfig() -> SRNSessionConfig {
         return SRNSessionConfig()
     }
@@ -26,11 +35,7 @@ public class SRNSessionConfig { // wrap around URLSessionConfiguration
     // convert SRNSessionConfig to URLSessionConfiguration
     func toURLSessionConfiguration() -> URLSessionConfiguration {
         let config = URLSessionConfiguration.default
-        
-        config.requestCachePolicy = URLRequest.CachePolicy(rawValue: self.requestCachePolicy.rawValue)!
-        
+        config.requestCachePolicy = self.requestCachePolicy.urlRequestCachePolicy
         return config
     }
-    
-    
 }
